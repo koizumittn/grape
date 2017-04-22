@@ -24,3 +24,6 @@ module Grape
     config.active_record.raise_in_transactional_callbacks = true
   end
 end
+
+config.paths.add File.join('app', 'api'), glob: File.join('**', '*.rb')
+config.autoload_paths += Dir[Rails.root.join('app', 'api', '*')]
